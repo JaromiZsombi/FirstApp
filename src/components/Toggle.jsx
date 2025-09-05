@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Button } from 'reactstrap'
 
 export const Toggle = () => {
+  const [isHappy, setIsHappy]=useState(true)
+
   return (
-    <div>
-      toggle...
+    <div className='p-5 d-flex gap-2 justify-content-center'>
+      <Button onClick={()=>setIsHappy(!isHappy)} outline>Are you happy?</Button>
+      <div>
+        {isHappy?<div style={{fontSize:"3rem"}}>😀</div>:<div style={{fontSize:"3rem"}}>😭</div>}
+      </div>
+      
     </div>
   )
 }
