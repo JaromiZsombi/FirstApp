@@ -6,6 +6,8 @@ import { useState } from 'react';
 import { Toggle } from './components/Toggle';
 import { Todo } from './components/Todo';
 import { Gallery } from './components/Gallery';
+import { Framework } from './components/Framework';
+import { RandomQuote } from './components/RandomQuote';
 
 function App() {
   const [selected, setSelected]=useState(null)
@@ -33,6 +35,8 @@ function App() {
         </Button>
       </div>
 
+    {selected == null && <Framework/>}
+    {selected == null && <RandomQuote/>}
     {selected=='counter' && <Counter/>}
     {selected == 'toggle' && <Toggle/>}
     {selected == 'todo' && <Todo/>}

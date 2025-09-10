@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from 'reactstrap'
+import { Dice } from './Dice'
 
 export const Toggle = () => {
   const [isHappy, setIsHappy]=useState(true)
@@ -10,8 +11,9 @@ export const Toggle = () => {
       <div>
         {isHappy?<div style={{fontSize:"3rem"}}>😀</div>:<div style={{fontSize:"3rem"}}>😭</div>}
       </div>
-      
+      <Dice/>
     </div>
+
   )
 }
 

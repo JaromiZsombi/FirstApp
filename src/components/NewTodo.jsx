@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
+import { FaTrash } from 'react-icons/fa'
 import { Button, Form, FormGroup, Input } from 'reactstrap'
 
-export const NewTodo = () => {
-
+export const NewTodo = ({handleAdd}) => {
     const [descr, setDescr] = useState("")
+
     console.log(descr)
+
     const handleSubmit=()=>{
+        handleAdd(descr)
+        setDescr("")
 
     }
+    
 
     return (
         <div>
@@ -21,7 +26,7 @@ export const NewTodo = () => {
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Button onClick={handleSubmit}> Add</Button>
+                    <Button onClick={handleSubmit} disabled={!descr}> Add</Button>
                 </FormGroup>
             </Form>
         </div>
